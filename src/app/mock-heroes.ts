@@ -1,14 +1,16 @@
-﻿import { Hero } from './hero';
+import { Hero } from './hero';
 
-export const HEROES : Hero[] = [
-  { id: 1, name: 'O'},
-  { id: 2, name: 'Senhor'},
-  { id: 3, name: 'É'},
-  { id: 4, name: 'Meu'},
-  { id: 5, name: 'Pastor'},
-  { id: 6, name: 'E'},
-  { id: 7, name: 'Nada'},
-  { id: 8, name: 'Me'},
-  { id: 9, name: 'Faltara'},
-  { id: 10, name: 'Salmo 23' }
+export const HEROES: Hero[] = [
+
+  { id: 11, name: 'Mr. Madeus'},
+  { id: 12, name: 'Mathios' },
+  { id: 13, name: 'Matheus' },
+  { id: 14, name: 'Tirfo' },
+  { id: 15, name: 'Theus' },
+  { id: 16, name: 'Flynn' },
+  { id: 17, name: 'Mth' },
+  { id: 18, name: 'Reis' },
+  { id: 19, name: 'Assumpção' },
+  { id: 20, name: 'lindo' }
+
 ];

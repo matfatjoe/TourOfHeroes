@@ -1,0 +1,17 @@
+
+<span>New Hero</span><br>
+
+<div class="row">
+  <div class="col-sm-1">
+    <label>ID:</label>
+    <input class="form-control" [(ngModel)]="hero.id" placeholder="ID">
+  </div>
+
+  <div class="col-sm-2">
+    <label>Name:</label>
+    <input class="form-control" [(ngModel)]="hero.name" placeholder="Name">
+  </div>
+
+  <button (click)="add()">Save</button>
+</div>
+<br>

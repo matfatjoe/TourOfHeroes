@@ -1,8 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Hero } from '../hero';
-import { HeroService } from '../hero.service';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+import { HeroFbService } from '../hero-fb.service'
+import { Component, OnInit, Input } from '@angular/core';
+import { Hero } from '../hero';
 
 @Component({
   selector: 'app-hero-detail',
@@ -11,18 +11,21 @@ import { Location } from '@angular/common';
 })
 export class HeroDetailComponent implements OnInit {
 
+  @Input() hero: Hero;
+
   constructor(
     private route: ActivatedRoute,
-    private heroService: HeroService,
+    private heroService: HeroFbService,
     private location: Location
   ) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.getHero();
   }
 
-  getHero(): void {
-    const id = +this.route.snapshot.paramMap.get('id');
+  getHero(): void{
+    const id = this.route.snapshot.paramMap.get('key');
+
     this.heroService.getHero(id)
       .subscribe(hero => this.hero = hero);
   }
@@ -31,6 +34,11 @@ export class HeroDetailComponent implements OnInit {
     this.location.back();
   }
 
-  @Input() hero : Hero;
+  updateHero() {
+    const id = this.route.snapshot.paramMap.get('key');
+    this.heroService.updateHero(id, this.hero);
+    this.goBack();
+  }
+
 
 }

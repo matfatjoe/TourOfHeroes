@@ -1,6 +1,21 @@
-<h2>Meu Heróis!</h2>
-<ul class="heroes">
-  <li *ngFor="let hero of heroes"  [class.selected]="hero === selectedHero" (click)="onSelect(hero)">
-    <span class="badge">{{hero.id}}</span>{{hero.name}}
+
+<h2> My heroes </h2>
+
+<app-hero-add></app-hero-add>
+
+<ul class="list-group">
+
+  <li *ngFor = "let hero of heroes" [class.selected]="hero === selectedHero">
+    <button class="btn btn-outline-danger" (click)="heroFbService.deleteHero(hero.key)">
+      X
+    </button>
+
+    <div id="heroes" class="btn-group" role="group">
+      <button type="button" class="btn btn-outline-primary" routerLink="/detail/{{hero.key}}">
+        <span class="badge">{{hero.id}}</span> {{hero.name}}
+      </button>
+    </div>
+
   </li>
+
 </ul>
